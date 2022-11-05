@@ -120,11 +120,6 @@ legend {
 
 /* Components */
 
-.section {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-}
-
 .btn {
   font-weight: 500;
   font-size: 18px;

@@ -73,12 +73,17 @@ const links = [
 <style lang="scss" scoped>
 .nav {
     text-transform: uppercase;
+    color: #121715;
 
     &--items {}
 
     &--item {
         display: grid;
         position: relative;
+    }
+
+    &--item:hover {
+        color: rgba(18, 23, 21, 0.3);
     }
 
     &--item:hover>&--child-items {
@@ -93,6 +98,7 @@ const links = [
         left: 100%;
         position: none;
         display: none;
+        color: #121715;
     }
 
     &--child-item {
@@ -100,6 +106,10 @@ const links = [
         grid-template-columns: auto 1fr;
         align-items: center;
         gap: 77px;
+    }
+
+    &--child-item:hover {
+        color: rgba(18, 23, 21, 0.3);
     }
 }
 </style>
