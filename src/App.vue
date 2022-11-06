@@ -9,6 +9,5 @@ import Brands from './components/sections/Brands.vue';
   <Main />
   <DefaultLayout>
     <About />
-    <Brands />
   </DefaultLayout>
 </template>
