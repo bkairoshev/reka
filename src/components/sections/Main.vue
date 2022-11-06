@@ -101,6 +101,7 @@ import LogoWhite from '../icons/LogoWhite.vue';
         &--title>span {
             font-size: 24px;
             line-height: 30px;
+            padding-bottom: 20px;
         }
 
         &--title>h1 {

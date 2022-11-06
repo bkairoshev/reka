@@ -5,6 +5,8 @@ import Logo from '../icons/Logo.vue';
 import BurgerMenu from '../icons/BurgerMenu.vue';
 import BurgerMenuClose from '../icons/BurgerMenuClose.vue';
 import Navbar from '../ui/Navbar.vue';
+import Telegram from '../icons/Telegram.vue';
+import Vk from '../icons/Vk.vue';
 
 const open = ref(false)
 const menu = ref(null)
@@ -26,7 +28,7 @@ watch(() => open.value, (isOpen) => {
 
 <template>
     <aside ref="menu" class="header">
-        <LogoWhite class="header--logo" />
+        <Logo class="header--logo" />
         <button @click="open = !open" class="header--burger">
             <BurgerMenuClose v-show="open" />
             <BurgerMenu v-show="!open" />
@@ -39,7 +41,13 @@ watch(() => open.value, (isOpen) => {
                 <Navbar />
 
                 <div class="menu--contacts">
+                    <span>+7 987 654 32 10</span>
+                    <a href="mailto:info@agro-man.ru">info@agro-man.ru</a>
 
+                    <div class="menu--contacts--social">
+                        <Telegram />
+                        <Vk />
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,16 +87,21 @@ watch(() => open.value, (isOpen) => {
 .menu {
     position: absolute;
     width: 100%;
-    background-color: #ffffff;
+    color: #121715;
+
     top: 0;
-    transition: transform .3s ease-in-out;
+    transition: background-color .3s cubic-bezier(0.46, 0.03, 0.85, 0.5);
+
+
 
     &--open {
         transform: translateY(0);
+        background-color: #ffffff;
     }
 
     &--close {
         transform: translateY(-100vh);
+        background-color: transparent;
     }
 
     &--logo {
@@ -131,15 +144,15 @@ watch(() => open.value, (isOpen) => {
         padding-left: 120px;
         top: 0;
         bottom: 0;
-        transition: transform .3s ease-in-out;
         left: 0;
 
         &--open {
-            transform: translateX(0);
+            background-color: #ffffff;
         }
 
         &--close {
-            transform: translateX(-200%);
+            visibility: hidden;
+            background-color: transparent;
         }
 
         &--logo {
@@ -148,7 +161,29 @@ watch(() => open.value, (isOpen) => {
         }
 
         &--content {
+            display: grid;
+            grid-template-rows: 3;
+            align-content: space-between;
+            height: 100%;
+
             padding: 36px 100px 90px 60px;
+        }
+
+        &--contacts {
+            font-size: 24px;
+            line-height: 30px;
+
+            display: grid;
+            gap: 10px;
+
+            &--social {
+                margin-top: 40px;
+
+                display: grid;
+                gap: 10px;
+                grid-auto-flow: column;
+                justify-content: start;
+            }
         }
     }
 }
